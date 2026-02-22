@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, MessageSquare } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
-import Scene3D from '../components/3d/Scene3D';
-import WhiteningSmile from '../components/3d/WhiteningSmile';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
