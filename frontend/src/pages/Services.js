@@ -66,18 +66,30 @@ const Services = () => {
         </div>
       </section>
 
-      {/* 3D Animation Section */}
+      {/* Animation Section */}
       <section className="py-12 px-6 md:px-12 lg:px-24">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            data-testid="services-3d-animation"
+            data-testid="services-animation"
+            className="relative h-[300px] flex items-center justify-center"
           >
-            <Scene3D>
-              <ImplantProcedure />
-            </Scene3D>
+            <div className="relative">
+              <motion.div
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="w-32 h-32 bg-white rounded-2xl shadow-2xl flex items-center justify-center text-6xl"
+              >
+                \ud83e\uddb7
+              </motion.div>
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-4 bg-primary rounded-full opacity-30 blur-md"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
