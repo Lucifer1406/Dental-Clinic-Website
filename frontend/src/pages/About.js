@@ -96,16 +96,31 @@ const About = () => {
             ))}
           </div>
 
-          {/* 3D Animation */}
+          {/* Animation Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            data-testid="about-3d-animation"
+            data-testid="about-animation"
+            className="relative h-[300px] flex items-center justify-center my-12"
           >
-            <Scene3D>
-              <TeethTransformation />
-            </Scene3D>
+            <div className="flex gap-4 items-end">
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ scaleY: 0.5, backgroundColor: '#8B4513' }}
+                  animate={{ scaleY: 1, backgroundColor: '#FFFFFF' }}
+                  transition={{
+                    duration: 2,
+                    delay: i * 0.2,
+                    repeat: Infinity,
+                    repeatType: 'reverse',
+                  }}
+                  className="w-12 h-24 rounded-lg shadow-lg border-2 border-primary"
+                  style={{ transformOrigin: 'bottom' }}
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
