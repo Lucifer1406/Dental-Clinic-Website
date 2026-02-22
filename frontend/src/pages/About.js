@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
 import { MapPin, Phone } from 'lucide-react';
-import Scene3D from '../components/3d/Scene3D';
-import TeethTransformation from '../components/3d/TeethTransformation';
 
 const About = () => {
   const doctors = [
