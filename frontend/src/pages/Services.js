@@ -6,8 +6,6 @@ import {
   Scissors,
   HeartPulse,
 } from 'lucide-react';
-import Scene3D from '../components/3d/Scene3D';
-import ImplantProcedure from '../components/3d/ImplantProcedure';
 
 const Services = () => {
   const services = [
