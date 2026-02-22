@@ -97,18 +97,27 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* 3D Animation */}
+      {/* Animation Section */}
       <section className="py-12 px-6 md:px-12 lg:px-24">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            data-testid="contact-3d-animation"
+            data-testid="contact-animation"
+            className="relative h-[300px] flex items-center justify-center"
           >
-            <Scene3D>
-              <WhiteningSmile />
-            </Scene3D>
+            <div className="flex gap-2">
+              {[...Array(10)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  animate={{ backgroundColor: ['#8B4513', '#FFFFFF', '#8B4513'] }}
+                  transition={{ duration: 3, delay: i * 0.1, repeat: Infinity }}
+                  className="w-8 h-16 rounded-lg shadow-lg"
+                  style={{ transformOrigin: 'bottom' }}
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
