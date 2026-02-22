@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import Scene3D from '../components/3d/Scene3D';
-import ToothImplant from '../components/3d/ToothImplant';
+import { ArrowRight, Star } from 'lucide-react';
 
 const Home = () => {
   return (
@@ -21,10 +19,13 @@ const Home = () => {
                 className="font-heading text-5xl md:text-6xl font-bold text-secondary tracking-tight mb-6"
                 data-testid="hero-title"
               >
-                Welcome to <span className="text-primary">Dentis3 Care</span>
+                Welcome to{' '}
+                <span className="text-primary bg-gradient-to-r from-primary to-[#66BB6A] bg-clip-text text-transparent">
+                  Dentis3 Care
+                </span>
               </h1>
               <div className="flex items-center gap-2 mb-6">
-                <Sparkles className="text-primary" size={24} />
+                <Star className="text-primary fill-primary" size={24} />
                 <p className="text-2xl md:text-3xl font-heading font-semibold text-primary">
                   Your Smile, Our Goal!
                 </p>
@@ -44,16 +45,23 @@ const Home = () => {
               </Link>
             </motion.div>
 
-            {/* Right 3D Animation */}
+            {/* Right Animation - CSS Based */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              data-testid="hero-3d-animation"
+              data-testid="hero-animation"
+              className="relative h-[400px] flex items-center justify-center"
             >
-              <Scene3D cameraPosition={[0, 0, 6]}>
-                <ToothImplant />
-              </Scene3D>
+              <div className="relative w-64 h-64 animate-float">
+                <div className="absolute inset-0 bg-primary rounded-full opacity-20 blur-3xl animate-pulse"></div>
+                <div className="relative w-full h-full bg-gradient-to-br from-white to-accent rounded-3xl shadow-2xl flex items-center justify-center transform hover:scale-105 transition-transform duration-500">
+                  <div className="text-8xl animate-bounce-slow">🦷</div>
+                </div>
+                <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-3xl animate-spin-slow shadow-lg">
+                  ✨
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -76,13 +84,13 @@ const Home = () => {
                 title: 'Expert Doctors',
                 description:
                   'Certified implantologists and specialists with international training.',
-                icon: '🦷',
+                icon: '👨‍⚕️',
               },
               {
                 title: 'Advanced Technology',
                 description:
                   'State-of-the-art equipment for painless and precise treatments.',
-                icon: '✨',
+                icon: '⚡',
               },
               {
                 title: 'Comprehensive Care',
@@ -148,6 +156,30 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 2s ease-in-out infinite;
+        }
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+      `}</style>
     </div>
   );
 };
