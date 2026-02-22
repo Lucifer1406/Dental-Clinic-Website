@@ -1,0 +1,129 @@
+{
+  "project_name": "Dentis3 Care",
+  "design_philosophy": {
+    "theme": "Light",
+    "emotional_tone": "Trust, Hygiene, Professionalism, Modern Tech",
+    "core_concept": "Advanced Dentistry meets Human Care",
+    "visual_style": "Clean, Airy, Medical Green, 3D Interactive"
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Manrope, sans-serif",
+      "body": "Inter, sans-serif"
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl font-bold tracking-tight",
+      "h2": "text-3xl md:text-4xl font-bold tracking-tight",
+      "h3": "text-2xl md:text-3xl font-semibold",
+      "body_large": "text-lg md:text-xl leading-relaxed",
+      "body_default": "text-base leading-relaxed text-gray-600"
+    },
+    "rules": [
+      "Headings must use Manrope. Do not use Inter for headings.",
+      "Use tight letter spacing for headings (-0.02em).",
+      "Body text should have relaxed line height (1.6) for readability."
+    ]
+  },
+  "colors": {
+    "primary": "#4CAF50",
+    "secondary": "#2E7D32",
+    "accent": "#E8F5E9",
+    "background": "#FFFFFF",
+    "text_main": "#333333",
+    "text_light": "#666666",
+    "success": "#4CAF50",
+    "error": "#EF4444",
+    "palette_notes": "Primary Green for Buttons/CTAs. Secondary Dark Green for Text/Headings. Accent Light Green for backgrounds/highlights."
+  },
+  "spacing_layout": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-16 md:py-24",
+    "grid_strategy": "Bento Grid for Services (Asymmetrical). Standard responsive grid for features.",
+    "border_radius": "rounded-2xl",
+    "shadows": "shadow-lg shadow-green-900/5"
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#4CAF50] text-white hover:bg-[#43A047] transition-all duration-300 rounded-full px-8 py-3 font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5",
+      "secondary": "bg-white text-[#2E7D32] border-2 border-[#2E7D32] hover:bg-[#E8F5E9] transition-all duration-300 rounded-full px-8 py-3 font-semibold"
+    },
+    "cards": {
+      "service_card": "bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-green-50 hover:border-green-100 group",
+      "doctor_card": "bg-white overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-all border border-gray-100"
+    },
+    "inputs": {
+      "default": "w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#4CAF50] focus:ring-2 focus:ring-[#4CAF50]/20 outline-none transition-all"
+    }
+  },
+  "motion": {
+    "page_transition": "Simple fade-in slide-up (0.5s ease-out).",
+    "hover_effects": "Scale up (1.02) or Lift (-4px).",
+    "scroll_animations": "Staggered fade-ins for list items."
+  },
+  "three_d_strategy": {
+    "library": "react-three-fiber, @react-three/drei",
+    "animations": [
+      {
+        "page": "Home",
+        "description": "Hero Section: 3D Tooth Implant. Interactive, rotating, sparkling. Use a Cylinder/Capsule geometry stack to simulate an implant if no model is available, or search for a free 'tooth.glb'. Add ambient light and spotlight to make it glow.",
+        "location": "Hero Right Side"
+      },
+      {
+        "page": "About",
+        "description": "Teeth Transformation. A row of procedural teeth (rounded boxes/capsules). Animate color from dark (decay) to white (healthy).",
+        "location": "Beside Doctor Info"
+      },
+      {
+        "page": "Services",
+        "description": "Implant Procedure. Step-by-step visual. Show a 'screw' (cylinder with thread texture) entering a 'gum' (pink soft mesh).",
+        "location": "Services Header or Sidebar"
+      },
+      {
+        "page": "Contact",
+        "description": "Whitening Smile. A 3D shape resembling a smile arc. Animate material emissive intensity to simulate whitening.",
+        "location": "Near Contact Form"
+      }
+    ],
+    "performance": "Use `drei` <Float>, <Environment> for realism. Lazy load models. Fallback to CSS placeholders if WebGL fails."
+  },
+  "image_assets": {
+    "logo_placeholder": "Green tooth icon with star. Text: DENTIS3 CARE.",
+    "hero_bg": "Clean, white/light-gray abstract medical pattern or gradient.",
+    "clinic_interior": "https://images.pexels.com/photos/305567/pexels-photo-305567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "happy_patient": "https://images.pexels.com/photos/3845744/pexels-photo-3845744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "doctor_interaction": "https://images.pexels.com/photos/3952124/pexels-photo-3952124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "dental_tools": "https://images.pexels.com/photos/6812463/pexels-photo-6812463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "content_guidelines": {
+    "tagline": "Your Smile, Our Goal!",
+    "address": "Shop No. 2, Monarch Nagar, S.N.B. Marg, J.B. Nagar, Andheri (E), 400069",
+    "phone": "+91 9004332292",
+    "doctors": [
+      {
+        "name": "Dr. Jesal Soneta",
+        "qualification": "B.D.S. (M.U.H.S.), A.C.T Esthetics & Restorative Dentistry (U.C.L.A. USA), Certified Implantologist (Manipal University)"
+      },
+      {
+        "name": "Dr. Niral Dedhia",
+        "qualification": "B.D.S. (M.U.H.S.), P.G.D.C.R."
+      }
+    ],
+    "services": [
+      "Implants",
+      "Cosmetic dentistry",
+      "Kids dentistry",
+      "Orthodontics",
+      "Painless Root canal Treatment"
+    ]
+  },
+  "universal_guidelines": [
+    "Do not use gradients for dark colors.",
+    "No generic centered layouts. Use asymmetry.",
+    "Add 'data-testid' to all interactive elements.",
+    "Use 'sonner' for toasts.",
+    "Ensure mobile responsiveness (hamburger menu).",
+    "Use Lucide-React for icons.",
+    "Do NOT use 'transparent' backgrounds for dropdowns/overlays."
+  ],
+  "instructions_to_main_agent": "1. Install 'lucide-react', 'framer-motion', '@react-three/fiber', '@react-three/drei', 'react-router-dom', 'sonner'. 2. Set up the Tailwind config with the specified colors. 3. Create the layout with Navbar and Footer. 4. Implement pages with their respective 3D components (create simple procedural 3D placeholders if complex models are missing). 5. Ensure the contact form hits the backend."
+}
