@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 
 const Scene3D = ({ children, cameraPosition = [0, 0, 5] }) => {
@@ -8,10 +8,9 @@ const Scene3D = ({ children, cameraPosition = [0, 0, 5] }) => {
       <Canvas
         camera={{ position: cameraPosition, fov: 50 }}
         shadows
-        dpr={[1, 2]}
+        dpr={[1, 1.5]}
       >
         <Suspense fallback={null}>
-          <Environment preset="city" />
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
           {children}
