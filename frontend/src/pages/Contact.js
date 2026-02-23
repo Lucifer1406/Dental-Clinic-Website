@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, MessageSquare } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageSquare, Calendar as CalendarIcon } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'sonner';
+import { DayPicker } from 'react-day-picker';
+import { format } from 'date-fns';
+import 'react-day-picker/dist/style.css';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
