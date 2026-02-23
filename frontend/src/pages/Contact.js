@@ -126,6 +126,65 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Calendar Section */}
+      <section className="py-12 px-6 md:px-12 lg:px-24 bg-accent">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl mx-auto"
+          >
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <CalendarIcon className="text-primary" size={32} />
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-secondary">
+                Select Your Preferred Date
+              </h2>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-6 flex justify-center">
+              <style>{`
+                .rdp {
+                  --rdp-cell-size: 50px;
+                  --rdp-accent-color: #4CAF50;
+                  --rdp-background-color: #E8F5E9;
+                  font-family: 'Inter', sans-serif;
+                }
+                .rdp-day_selected {
+                  background-color: #4CAF50;
+                  color: white;
+                }
+                .rdp-day_today {
+                  font-weight: bold;
+                  color: #2E7D32;
+                }
+              `}</style>
+              <DayPicker
+                mode="single"
+                selected={selectedDate}
+                onSelect={setSelectedDate}
+                disabled={{ before: new Date() }}
+                showOutsideDays
+                className="mx-auto"
+              />
+            </div>
+            {selectedDate && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-4 text-center text-text-light"
+              >
+                <p className="text-lg">
+                  Selected Date:{' '}
+                  <span className="font-semibold text-primary">
+                    {format(selectedDate, 'MMMM dd, yyyy')}
+                  </span>
+                </p>
+              </motion.div>
+            )}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact Info & Forms */}
       <section className="py-16 md:py-24 px-6 md:px-12 lg:px-24">
         <div className="container mx-auto">
