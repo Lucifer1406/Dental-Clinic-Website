@@ -28,6 +28,7 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleContactSubmit = async (e) => {
     e.preventDefault();
