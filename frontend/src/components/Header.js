@@ -28,8 +28,8 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8" data-testid="desktop-nav">
+          {/* Desktop Navigation with increased spacing */}
+          <nav className="hidden md:flex space-x-12" data-testid="desktop-nav">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
