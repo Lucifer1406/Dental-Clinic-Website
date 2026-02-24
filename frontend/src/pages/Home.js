@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, CheckCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import ToothScene from '../components/3d/ToothScene';
-import ExplodedTooth from '../components/3d/ExplodedTooth';
 
 const AnimatedCounter = ({ end, duration = 2, suffix = '' }) => {
   const [count, setCount] = useState(0);
