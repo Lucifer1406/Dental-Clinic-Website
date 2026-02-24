@@ -118,21 +118,20 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* Right Animation - CSS Based */}
+            {/* Right 3D Animation - Exploded Tooth */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               data-testid="hero-animation"
-              className="relative h-[400px] flex items-center justify-center"
+              className="relative h-[500px] flex items-center justify-center"
             >
-              <div className="relative w-64 h-64 animate-float">
-                <div className="absolute inset-0 bg-primary rounded-full opacity-20 blur-3xl animate-pulse"></div>
-                <div className="relative w-full h-full bg-gradient-to-br from-white to-accent rounded-3xl shadow-2xl flex items-center justify-center transform hover:scale-105 transition-transform duration-500">
-                  <div className="text-8xl animate-bounce-slow">🦷</div>
-                </div>
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-3xl animate-spin-slow shadow-lg">
-                  ✨
+              <div className="relative w-full h-full max-w-md mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-br from-white to-accent rounded-3xl shadow-2xl" style={{ margin: '20px' }}></div>
+                <div className="relative w-full h-full p-6">
+                  <ToothScene autoRotate={true}>
+                    <ExplodedTooth />
+                  </ToothScene>
                 </div>
               </div>
             </motion.div>
