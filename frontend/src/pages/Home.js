@@ -118,7 +118,7 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* Right 3D Animation - Exploded Tooth */}
+            {/* Right 3D Animation - Exploded Tooth CSS Version */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -126,12 +126,153 @@ const Home = () => {
               data-testid="hero-animation"
               className="relative h-[500px] flex items-center justify-center"
             >
-              <div className="relative w-full h-full max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-br from-white to-accent rounded-3xl shadow-2xl" style={{ margin: '20px' }}></div>
-                <div className="relative w-full h-full p-6">
-                  <ToothScene autoRotate={true}>
-                    <ExplodedTooth />
-                  </ToothScene>
+              <div className="relative w-full h-full max-w-md mx-auto" style={{ perspective: '1000px' }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F8F8FF] to-accent rounded-3xl shadow-2xl" style={{ margin: '20px' }}></div>
+                <div className="relative w-full h-full flex items-center justify-center p-8">
+                  <div className="tooth-exploded-container">
+                    {/* Crown */}
+                    <motion.div
+                      animate={{
+                        y: [0, -80, 0],
+                        rotateY: [0, 20, 0],
+                        opacity: [1, 1, 1],
+                      }}
+                      transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        times: [0, 0.3, 1],
+                      }}
+                      className="tooth-layer crown"
+                      data-label="Crown"
+                    >
+                      <div className="layer-inner" style={{ 
+                        background: 'linear-gradient(135deg, #F8F8FF 0%, #FFFFFF 100%)',
+                        boxShadow: '0 4px 20px rgba(76, 175, 80, 0.2), inset 0 2px 10px rgba(168, 213, 162, 0.3)',
+                      }}></div>
+                      <span className="layer-label">Crown</span>
+                    </motion.div>
+
+                    {/* Enamel */}
+                    <motion.div
+                      animate={{
+                        y: [0, -50, 0],
+                        rotateY: [0, 15, 0],
+                        opacity: [0.95, 0.95, 0.95],
+                      }}
+                      transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        times: [0, 0.3, 1],
+                        delay: 0.1,
+                      }}
+                      className="tooth-layer enamel"
+                      data-label="Enamel"
+                    >
+                      <div className="layer-inner" style={{ 
+                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 248, 255, 0.85) 100%)',
+                        boxShadow: '0 3px 15px rgba(168, 213, 162, 0.25), inset 0 1px 8px rgba(76, 175, 80, 0.2)',
+                      }}></div>
+                      <span className="layer-label">Enamel</span>
+                    </motion.div>
+
+                    {/* Dentin */}
+                    <motion.div
+                      animate={{
+                        y: [0, -30, 0],
+                        rotateY: [0, 10, 0],
+                        opacity: [0.9, 0.9, 0.9],
+                      }}
+                      transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        times: [0, 0.3, 1],
+                        delay: 0.2,
+                      }}
+                      className="tooth-layer dentin"
+                      data-label="Dentin"
+                    >
+                      <div className="layer-inner" style={{ 
+                        background: 'linear-gradient(135deg, #F8F8FF 0%, #D8C8E8 100%)',
+                        boxShadow: '0 3px 12px rgba(216, 200, 232, 0.3), inset 0 1px 6px rgba(168, 213, 162, 0.2)',
+                      }}></div>
+                      <span className="layer-label">Dentin</span>
+                    </motion.div>
+
+                    {/* Pulp Chamber */}
+                    <motion.div
+                      animate={{
+                        y: [0, 0, 0],
+                        scale: [1, 1.05, 1],
+                        rotateY: [0, 5, 0],
+                      }}
+                      transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        times: [0, 0.3, 1],
+                        delay: 0.3,
+                      }}
+                      className="tooth-layer pulp"
+                      data-label="Pulp"
+                    >
+                      <div className="layer-inner" style={{ 
+                        background: 'radial-gradient(circle, #FFB6C1 0%, #D8A8B8 100%)',
+                        boxShadow: '0 0 20px rgba(255, 182, 193, 0.4), inset 0 0 10px rgba(255, 105, 180, 0.3)',
+                      }}></div>
+                      <span className="layer-label">Pulp Chamber</span>
+                    </motion.div>
+
+                    {/* Root Canal */}
+                    <motion.div
+                      animate={{
+                        y: [0, 30, 0],
+                        rotateY: [0, -10, 0],
+                        opacity: [0.85, 0.85, 0.85],
+                      }}
+                      transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        times: [0, 0.3, 1],
+                        delay: 0.4,
+                      }}
+                      className="tooth-layer root-canal"
+                      data-label="Root"
+                    >
+                      <div className="layer-inner" style={{ 
+                        background: 'linear-gradient(180deg, #D8C8E8 0%, #C8B8D8 100%)',
+                        boxShadow: '0 2px 10px rgba(216, 200, 232, 0.3)',
+                      }}></div>
+                      <span className="layer-label">Root Canal</span>
+                    </motion.div>
+
+                    {/* Implant Base */}
+                    <motion.div
+                      animate={{
+                        y: [0, 50, 0],
+                        rotateY: [0, -15, 0],
+                        opacity: [0.9, 0.9, 0.9],
+                      }}
+                      transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        times: [0, 0.3, 1],
+                        delay: 0.5,
+                      }}
+                      className="tooth-layer implant"
+                      data-label="Implant"
+                    >
+                      <div className="layer-inner" style={{ 
+                        background: 'linear-gradient(180deg, #C0C0C0 0%, #A0A0A0 100%)',
+                        boxShadow: '0 2px 15px rgba(168, 213, 162, 0.35), inset 0 1px 5px rgba(76, 175, 80, 0.3)',
+                      }}></div>
+                      <span className="layer-label">Implant Base</span>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </motion.div>
