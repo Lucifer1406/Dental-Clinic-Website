@@ -476,6 +476,107 @@ const Home = () => {
         .animate-spin-slow {
           animation: spin-slow 8s linear infinite;
         }
+
+        .tooth-exploded-container {
+          position: relative;
+          width: 100%;
+          height: 400px;
+          transform-style: preserve-3d;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .tooth-layer {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform-style: preserve-3d;
+        }
+
+        .tooth-layer .layer-inner {
+          border-radius: 12px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .crown .layer-inner {
+          width: 100px;
+          height: 80px;
+          border-radius: 50% 50% 20% 20%;
+        }
+
+        .enamel .layer-inner {
+          width: 95px;
+          height: 70px;
+          border-radius: 45% 45% 20% 20%;
+        }
+
+        .dentin .layer-inner {
+          width: 85px;
+          height: 90px;
+          border-radius: 40% 40% 15% 15%;
+        }
+
+        .pulp .layer-inner {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+
+        .root-canal .layer-inner {
+          width: 45px;
+          height: 100px;
+          border-radius: 10% 10% 30% 30%;
+        }
+
+        .implant .layer-inner {
+          width: 40px;
+          height: 60px;
+          border-radius: 8px 8px 40% 40%;
+        }
+
+        .layer-label {
+          position: absolute;
+          right: -80px;
+          background: rgba(76, 175, 80, 0.95);
+          color: white;
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+          white-space: nowrap;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+          font-family: 'Inter', sans-serif;
+        }
+
+        .tooth-layer:hover .layer-label {
+          opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+          .tooth-exploded-container {
+            height: 350px;
+          }
+          
+          .crown .layer-inner { width: 80px; height: 65px; }
+          .enamel .layer-inner { width: 75px; height: 55px; }
+          .dentin .layer-inner { width: 70px; height: 75px; }
+          .pulp .layer-inner { width: 40px; height: 40px; }
+          .root-canal .layer-inner { width: 35px; height: 80px; }
+          .implant .layer-inner { width: 32px; height: 50px; }
+          
+          .layer-label {
+            right: -70px;
+            font-size: 10px;
+            padding: 3px 10px;
+          }
+        }
       `}</style>
     </div>
   );
