@@ -56,7 +56,6 @@ const LayerLabel = ({ position, text, animationProgress }) => {
         color="#2E7D32"
         anchorX="center"
         anchorY="middle"
-        font="/fonts/inter-bold.woff"
         outlineWidth={0.02}
         outlineColor="#ffffff"
       >
